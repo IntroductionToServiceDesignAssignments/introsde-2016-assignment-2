@@ -1,0 +1,99 @@
+Request #1: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person Accept: application/json
+Result: OK
+HTTP Status: 200
+[{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measureType":[]},{"idPerson":2,"lastname":"Pinco","firstname":"Pallino","birthdate":"1982-06-08","measureType":[{"idMeasure":352,"value":"86","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}}]},{"idPerson":3,"lastname":"Pippo","firstname":"Pappo","birthdate":"1960-04-09","measureType":[{"idMeasure":50,"value":"72.3","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}}]},{"idPerson":4,"lastname":"Pallino","firstname":"Angolo","birthdate":"1983-05-07","measureType":[]},{"idPerson":5,"lastname":"Pallio","firstname":"Angolo","birthdate":"1998-01-01","measureType":[{"idMeasure":2205,"value":"30","measureDefinition":{"idMeasureDef":6,"measureName":"bmi","measureType":"double"}}]}]
+
+Request #2: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1 Accept: application/json
+Result: OK
+HTTP Status: 200
+{"idPerson":1,"lastname":"Norris","firstname":"Daniele","birthdate":"1945-01-01","measureType":[]}
+
+Request #3: PUT https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1  Accept:application/json Content-Type application/json 
+Result: OK
+HTTP Status: 200
+{"idPerson":1,"lastname":"Pallio","firstname":"Angolo","birthdate":"1978-09-02","measureType":null}
+
+Request #4: POST https://dellagiacomaintrosde2.herokuapp.com/sdelab/person  Accept:application/json Content-Type application/json
+Result: OK
+HTTP Status: 200
+{"idPerson":1257,"lastname":"Norris","firstname":"Chuck","birthdate":"1945-01-01","measureType":[{"idMeasure":2362,"value":"78.9","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasure":2363,"value":"172","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double"}}]}
+
+Request #5: DELETE https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1257
+Result: OK
+HTTP Status: 204
+
+Request #5: DELETE https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1256
+Result: OK
+HTTP Status: 204
+Result: ERROR
+HTTP Status: 200
+
+Request #9: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/measureTypes Accept: application/json
+Result: OK
+HTTP Status: 200
+[{"idMeasureDef":1,"measureName":"weight","measureType":"double"},{"idMeasureDef":2,"measureName":"height","measureType":"double"},{"idMeasureDef":3,"measureName":"steps","measureType":"integer"},{"idMeasureDef":4,"measureName":"bloodpressure","measureType":"double"},{"idMeasureDef":5,"measureName":"heartrate","measureType":"integer"},{"idMeasureDef":6,"measureName":"bmi","measureType":"double"}]
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/weight Accept: application/json
+Result: OK
+HTTP Status: 200
+[{"idMeasureHistory":1,"timestamp":"2012-12-27 23:00:00","value":"83","person":{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measureType":[]},"measureDef":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasureHistory":2,"timestamp":"2013-02-26 23:00:00","value":"80","person":{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measureType":[]},"measureDef":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasureHistory":3,"timestamp":"2013-06-29 22:00:00","value":"75","person":{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measureType":[]},"measureDef":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasureHistory":906,"timestamp":"2011-12-09 00:00:00","value":"72","person":{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measureType":[]},"measureDef":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}},{"idMeasureHistory":907,"timestamp":"2011-12-09 00:00:00","value":"72","person":{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measureType":[]},"measureDef":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}}]
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/5/weight Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/height Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/5/height Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/steps Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/5/steps Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/bloodpressure Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/5/bloodpressure Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/heartrate Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/5/heartrate Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/bmi Accept: application/json
+Result: ERROR
+HTTP Status: 200
+
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/5/bmi Accept: application/json
+Result: ERROR
+HTTP Status: 200
+Request #6: Correct results: 1            OK
+
+Request #7: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/weight/1 Accept: application/json
+Result: OK
+HTTP Status: 200
+{"idMeasureHistory":1,"timestamp":"2012-12-27 23:00:00","value":"83","person":{"idPerson":1,"lastname":"Maregiot","firstname":"Davide","birthdate":"1978-09-02","measureType":[]},"measureDef":{"idMeasureDef":1,"measureName":"weight","measureType":"double"}}
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/weight Accept: application/json
+Result: OK
+HTTP Status: 200
+
+Request #8: POST https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/weight Accept:application/json Content-Type application/json
+Request #6: GET https://dellagiacomaintrosde2.herokuapp.com/sdelab/person/1/weight Accept: application/json
+Result: OK
+HTTP Status: 200
+Content type:application/json Result: OK
+HTTP Status: New Health Profile inserted, History updated
